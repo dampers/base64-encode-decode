@@ -17,12 +17,14 @@ def detail(request, blog_id):
 
 def write(request):
     return render(request, 'blog/write.html')
+
 def error(request):
     return render(request, 'blog/error.html')
+
 def create(request):
     blog = Blog()
-    #if blog.password != '1234':
-        #return render(request, 'blog/error.html')
+    if blog.password != '1234':
+        return render(request, 'blog/error.html')
     blog.title = request.GET['title']
     blog.body = request.GET['body']
     blog.pub_date = timezone.datetime.now()
