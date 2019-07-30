@@ -20,6 +20,8 @@ def write(request):
 
 def create(request):
     blog = Blog()
+    if blog.password != '1234':
+        return render(request, 'blog/error.html')
     blog.title = request.GET['title']
     blog.body = request.GET['body']
     blog.pub_date = timezone.datetime.now()
