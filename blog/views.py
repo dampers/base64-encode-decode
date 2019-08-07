@@ -94,4 +94,4 @@ def encode(request):
         if lenm%3!=0:
             word += '='
 
-    return render(request, 'encode/encode64.html', {'fulltext':word})
+    return render(request, 'blog/encode.html', {'fulltext':word})
