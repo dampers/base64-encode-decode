@@ -20,13 +20,14 @@
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link active" href="{% url 'home' %}">Home</a>
           <a class="nav-item nav-link" href="{% url 'write' %}">write a new script</a>
-          <a class="nav-item nav-link" href="{% url 'ready' %}">encode64</a>
+          <a class="nav-item nav-link" href="{% url 'To_encode' %}">BASE64 encode</a>
+          <a class="nav-item nav-link" href="{% url 'To_decode' %}">BASE64 decode</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <form action="{% url 'encode' %}">
+  <form action="{% url 'decode' %}">
         <textarea cols="40" rows="10" name="fulltext"></textarea>
       <br>
       <input type="submit" value="Encode!"/>

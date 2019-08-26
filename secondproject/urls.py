@@ -24,6 +24,8 @@ urlpatterns = [
     path('blog/write/', blog.views.write, name='write'),
     path('blog/create/', blog.views.create, name='create'),
     path('blog/error/', blog.views.error, name="error"),
-    path('blog/ready/', blog.views.ready, name='ready'),
+    path('blog/To_encode/', blog.views.To_encode, name='To_encode'),
     path('blog/encode/', blog.views.encode, name="encode"),
+    path('blog/To_decode/', blog.views.To_decode, name='To_decode'),
+    path('blog/decode/', blog.views.decode, name='decode'),
 ]

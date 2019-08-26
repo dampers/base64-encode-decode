@@ -3,6 +3,7 @@ from django.utils import timezone
 
 
 from .models import Blog
+import base64
 # Create your views here.
 
 
@@ -29,10 +30,13 @@ def create(request):
     blog.body = request.GET['body']
     blog.pub_date = timezone.datetime.now()
     blog.save()
-    return redirect('/blog/' + str(blog.id))
+    return redirect('/blog/' + str(blog.title))
 
-def ready(request):
-    return render(request, 'blog/ready.html')
+def To_encode(request):
+    return render(request, 'blog/To_encode.html')
+
+def To_decode(request):
+    return render(request, 'blog/To_decode.html')
 
 codesf = ['A','B','C','D','E','F','G','H','I','J',
     'K','L','M','N','O','P','Q','R','S','T',
@@ -41,6 +45,15 @@ codesf = ['A','B','C','D','E','F','G','H','I','J',
     'o','p','q','r','s','t','u','v','w','x',
     'y','z','0','1','2','3','4','5','6','7',
     '8','9',' ','/']
+
+def decode(request):
+    full_text = request.GET['fulltext']
+    msg = full_text
+    msg = msg.encode("UTF-8")
+    msg = base64.b64decode(msg)
+    msg = msg.decode("UTF-8")
+    return render(request, 'blog/decode.html', {'fulltext':msg})
+
 
 def encode(request):
     full_text = request.GET['fulltext']

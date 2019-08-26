@@ -20,7 +20,8 @@
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link active" href="{% url 'home' %}">Home</a>
           <a class="nav-item nav-link" href="{% url 'write' %}">write a new script</a>
-          <a class="nav-item nav-link" href="{% url 'ready' %}">encode64</a>
+          <a class="nav-item nav-link" href="{% url 'To_encode' %}">BASE64 encode</a>
+          <a class="nav-item nav-link" href="{% url 'To_decode' %}">BASE64 decode</a>
         </div>
       </div>
     </div>
@@ -30,7 +31,7 @@
   <h1>encoded :</h1>
   <br>
     <p>{{ fulltext }}</p>
-  <a href="{% url 'ready' %}">다시하기</a>
+  <a href="{% url 'To_encode' %}">다시하기</a>
 
 
 
